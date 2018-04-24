@@ -14,7 +14,7 @@ import NotFound from '../routes/Exception/404';
 import { getRoutes } from '../utils/utils';
 import Authorized from '../utils/Authorized';
 import { getMenuData } from '../common/menu';
-import logo from '../assets/logo.svg';
+import logo from '../assets/logo.png';
 
 const { Content, Header, Footer } = Layout;
 const { AuthorizedRoute, check } = Authorized;
@@ -56,6 +56,8 @@ const getBreadcrumbNameMap = (menuData, routerData) => {
   }
   return Object.assign({}, routerData, result, childResult);
 };
+
+
 
 const query = {
   'screen-xs': {
@@ -114,9 +116,9 @@ class BasicLayout extends React.PureComponent {
   getPageTitle() {
     const { routerData, location } = this.props;
     const { pathname } = location;
-    let title = 'Ant Design Pro';
+    let title = "企业版";
     if (routerData[pathname] && routerData[pathname].name) {
-      title = `${routerData[pathname].name} - Ant Design Pro`;
+      title = `${routerData[pathname].name} - 企业版`;
     }
     return title;
   }
@@ -182,6 +184,7 @@ class BasicLayout extends React.PureComponent {
       location,
     } = this.props;
     const bashRedirect = this.getBashRedirect();
+
     const layout = (
       <Layout>
         <SiderMenu
@@ -197,7 +200,7 @@ class BasicLayout extends React.PureComponent {
           onCollapse={this.handleMenuCollapse}
         />
         <Layout>
-          <Header style={{ padding: 0 }}>
+          <Header style={{ padding: 0 ,height:'58px',lineHeight:'58px'}}>
             <GlobalHeader
               logo={logo}
               currentUser={currentUser}
@@ -232,29 +235,10 @@ class BasicLayout extends React.PureComponent {
           </Content>
           <Footer style={{ padding: 0 }}>
             <GlobalFooter
-              links={[
-                {
-                  key: 'Pro 首页',
-                  title: 'Pro 首页',
-                  href: 'http://pro.ant.design',
-                  blankTarget: true,
-                },
-                {
-                  key: 'github',
-                  title: <Icon type="github" />,
-                  href: 'https://github.com/ant-design/ant-design-pro',
-                  blankTarget: true,
-                },
-                {
-                  key: 'Ant Design',
-                  title: 'Ant Design',
-                  href: 'http://ant.design',
-                  blankTarget: true,
-                },
-              ]}
+              links={[]}
               copyright={
                 <Fragment>
-                  Copyright <Icon type="copyright" /> 2018 蚂蚁金服体验技术部出品
+                  Copyright <Icon type="copyright" /> 2018 喜马拉雅企业版
                 </Fragment>
               }
             />

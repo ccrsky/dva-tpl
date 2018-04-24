@@ -1,24 +1,25 @@
 const path = require('path');
 
 export default {
-  entry: 'src/index.js',
+  entry: "src/index.js",
   extraBabelPlugins: [
-    ['import', { libraryName: 'antd', libraryDirectory: 'es', style: true }],
+    ["import", { libraryName: "antd", libraryDirectory: "es", style: true }]
   ],
   env: {
     development: {
-      extraBabelPlugins: ['dva-hmr'],
-    },
+      extraBabelPlugins: ["dva-hmr"]
+    }
   },
   alias: {
-    components: path.resolve(__dirname, 'src/components/'),
+    components: path.resolve(__dirname, "src/components/")
   },
   ignoreMomentLocale: true,
-  theme: './src/theme.js',
+  theme: "./src/theme.js",
   html: {
-    template: './src/index.ejs',
+    template: "./src/index.ejs"
   },
   disableDynamicImport: true,
-  publicPath: '/',
+  publicPath: "/",
   hash: true,
+  devtool: "source-map"
 };
