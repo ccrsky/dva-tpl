@@ -49,10 +49,6 @@ export default class GlobalHeader extends PureComponent {
       </Menu>
     );
 
-
-    console.log(currentUser);
-
-
     return (
       <div className={styles.header}>
         {isMobile && [
